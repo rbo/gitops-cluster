@@ -43,9 +43,12 @@ spec:
         persistence:
           library:
             enabled: true
+            type: pvc
             storageClass: lvms-vg1
+            mountPath: /usr/src/app/upload
             accessMode: ReadWriteOnce
-            size: 5Gi
+            size: 100Gi
+            retain: true
 
         server:
           image:
