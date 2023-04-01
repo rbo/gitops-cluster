@@ -2,7 +2,7 @@
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
-  name: immich-secret
+  name: immich-jwt
 spec:
   secretStoreRef:
     kind: ClusterSecretStore
@@ -12,5 +12,5 @@ spec:
   data:
   - secretKey: password
     remoteRef:
-      key: immich-secret
+      key: immich-jwt
       property: password
