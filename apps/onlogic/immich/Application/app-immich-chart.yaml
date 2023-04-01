@@ -28,7 +28,7 @@ spec:
           enabled: false
 
         common_env:
-          DB_HOSTNAME: "app-immich-postgresql-chart.svc.cluster.local"
+          DB_HOSTNAME: "app-immich-postgresql-chart.photos.svc.cluster.local."
           DB_PASSWORD:
             valueFrom:
               secretKeyRef:
