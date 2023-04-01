@@ -20,7 +20,7 @@ spec:
         commonLabels:
 
         global:
-          storageClass: odf-lvm-vg1
+          storageClass: lvms-vg1
           postgresql:
             auth:
               username: immich
