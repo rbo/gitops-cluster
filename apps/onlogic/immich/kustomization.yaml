@@ -6,3 +6,5 @@ namespace: photos
 resources:
 - Certificate/
 - Namespace/
+- Application/
+- ExternalSecret/

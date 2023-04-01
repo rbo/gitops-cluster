@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-immich-postgresql-chart
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "111"
+spec:
+  destination:
+    namespace: photos
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: https://charts.bitnami.com/bitnami
+    chart: postgresql
+    targetRevision: 12.2.3
+    helm:
+      values: |-
+
+        commonLabels:
+
+        global:
+          storageClass: odf-lvm-vg1
+          postgresql:
+            auth:
+              username: immich
+              existingSecret: immich-postgresql
+              database: immich
+
+  ignoreDifferences:
+    - group: "apps"
+      kind: "StatefulSet"
+      jsonPointers:
+        - /spec/replicas
+
+  syncPolicy:
+    syncOptions:
+      - RespectIgnoreDifferences=true
+      - CreateNamespace=true
