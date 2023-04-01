@@ -8,6 +8,7 @@ spec:
     - list:
         elements:
           - app: cert-manager
+          - app: immich
   template:
     metadata:
       name: 'app-{{ app }}'

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: "photos.bohne.io"
+    openshift.io/display-name: "photos.bohne.io"
+    openshift.io/requester: robert@bohne.io
+  creationTimestamp: "2023-04-01T13:58:48Z"
+  labels:
+    kubernetes.io/metadata.name: photos
+  name: photos
+spec: {}
