@@ -24,16 +24,6 @@ spec:
         redis:
           enabled: true
 
-        global:
-          # -- Set an override for the prefix of the fullname
-          nameOverride: immich
-          # -- Set the entire name definition
-          # fullnameOverride: immich
-          # -- Set additional global labels. Helm templates can be used.
-          labels: {}
-          # -- Set additional global annotations. Helm templates can be used.
-          annotations: {}
-
         postgresql:
           enabled: false
 
