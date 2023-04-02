@@ -27,8 +27,19 @@ spec:
         postgresql:
           enabled: false
 
+        typesense:
+          enabled: true
+          env:
+            TYPESENSE_DATA_DIR: /tsdata
+            TYPESENSE_API_KEY: typesense
+          persistence:
+            tsdata:
+              enabled: false
+              accessMode: ReadWriteOnce
+              size: 8Gi
+              storageClass: lvms-vg1
+
         env:
-          TYPESENSE_ENABLED: false
           DB_HOSTNAME: "app-immich-postgresql-chart.photos.svc.cluster.local."
           DB_PASSWORD:
             valueFrom:
