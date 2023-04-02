@@ -40,14 +40,6 @@ spec:
                 name: immich-jwt
                 key: password
 
-        persistence:
-          library:
-            enabled: false
-            mountPath: /usr/src/app/upload
-            accessMode: ReadWriteOnce
-            storageClass: lvms-vg1
-            size: 100Gi
-
         server:
           image:
             repository: docker.io/altran1502/immich-server
@@ -88,6 +80,12 @@ spec:
             enabled: true
             type: emptyDir
             mountPath: /usr/src/app/.transformers_cache
+          upload:
+            enabled: true
+            mountPath: /usr/src/app/upload
+            accessMode: ReadWriteOnce
+            storageClass: lvms-vg1
+            size: 100Gi
 
   project: default
   syncPolicy:
