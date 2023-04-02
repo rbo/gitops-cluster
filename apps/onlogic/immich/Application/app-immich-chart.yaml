@@ -24,6 +24,16 @@ spec:
         redis:
           enabled: true
 
+        global:
+          # -- Set an override for the prefix of the fullname
+          nameOverride: immich
+          # -- Set the entire name definition
+          fullnameOverride: immich
+          # -- Set additional global labels. Helm templates can be used.
+          labels: {}
+          # -- Set additional global annotations. Helm templates can be used.
+          annotations: {}
+
         postgresql:
           enabled: false
 
@@ -33,7 +43,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: immich-postgresql
-                key: password          
+                key: password
           JWT_SECRET:
             valueFrom:
               secretKeyRef:
@@ -42,13 +52,13 @@ spec:
 
         persistence:
           library:
+            enabled: false
+          upload:
             enabled: true
-            type: pvc
-            storageClass: lvms-vg1
             mountPath: /usr/src/app/upload
             accessMode: ReadWriteOnce
+            storageClass: lvms-vg1
             size: 100Gi
-            retain: true
 
         server:
           image:
@@ -68,17 +78,17 @@ spec:
             # renovate: datasource=docker depName=docker.io/altran1502/immich-machine-learning
             tag: v1.50.1
           command: null
-          args: []           
+          args: []
           env:
             NODE_ENV: "production"
             TRANSFORMERS_CACHE: /usr/src/app/.transformers_cache
-          
+
         web:
           image:
             repository: docker.io/altran1502/immich-web
             # renovate: datasource=docker depName=docker.io/altran1502/immich-web
             tag: v1.50.1
-          
+
         proxy:
           image:
             repository: docker.io/altran1502/immich-proxy
