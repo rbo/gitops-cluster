@@ -7,3 +7,4 @@ resources:
 - Namespace/
 - Application/
 - ExternalSecret/
+- ClusterRoleBinding/
