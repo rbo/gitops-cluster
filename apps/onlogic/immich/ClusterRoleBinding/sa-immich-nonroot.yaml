@@ -8,5 +8,5 @@ roleRef:
   name: system:openshift:scc:nonroot
 subjects:
 - kind: ServiceAccount
-  name: immich-redis
+  name: app-immich-chart
   namespace: photos
