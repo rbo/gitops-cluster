@@ -27,8 +27,7 @@ spec:
         postgresql:
           enabled: false
 
-        common_env:
-          TYPESENSE_ENABLED: false
+        env:
           DB_HOSTNAME: "app-immich-postgresql-chart.photos.svc.cluster.local."
           DB_PASSWORD:
             valueFrom:
