@@ -11,8 +11,8 @@ spec:
     server: "https://kubernetes.default.svc"
   source:
     path: charts/immich
-    repoURL: "https://github.com/immich-app/immich-charts.git"
-    targetRevision: immich-0.0.4
+    repoURL: "https://github.com/rbo/immich-charts.git"
+    targetRevision: onlogic
     helm:
       values: |-
 
