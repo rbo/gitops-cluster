@@ -37,9 +37,8 @@ spec:
         ingress:
           main:
             enabled: true
-            tls:
-              - hosts:
-                  - "chatbot.apps.onlogic.bohne.io"
+            annotations:
+              route.openshift.io/termination: "edge"
             hosts:
             - host: chatbot.apps.onlogic.bohne.io
               paths:
