@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-chatbot-ui
+  name: app-chatbot-ui-chart
   namespace: openshift-gitops
   annotations:
     argocd.argoproj.io/sync-wave: "1"
@@ -37,6 +37,9 @@ spec:
         ingress:
           main:
             enabled: true
+            tls:
+              hosts:
+                - chatbot.apps.onlogic.bohne.io
             hosts:
             - host: chatbot.apps.onlogic.bohne.io
               paths:
