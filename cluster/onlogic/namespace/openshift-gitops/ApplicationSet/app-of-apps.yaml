@@ -9,6 +9,7 @@ spec:
         elements:
           - app: cert-manager
           - app: immich
+          - app: chatbot-ui
   template:
     metadata:
       name: 'app-{{ app }}'
