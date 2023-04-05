@@ -38,8 +38,8 @@ spec:
           main:
             enabled: true
             tls:
-              hosts:
-                - "chatbot.apps.onlogic.bohne.io"
+              - hosts:
+                  - "chatbot.apps.onlogic.bohne.io"
             hosts:
             - host: chatbot.apps.onlogic.bohne.io
               paths:
