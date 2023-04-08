@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: ok-for-deployment
+  name: ok-for-test-deployment
 spec:
   generators:
   - pullRequest:
@@ -16,7 +16,7 @@ spec:
           key: token
         # Labels is used to filter the PRs that you want to target. (optional)
         labels:
-        - ok-for-deployment
+        - ok-for-test-deployment
   template:
     metadata:
       name: 'pr-{{number}}'
