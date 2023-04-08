@@ -10,6 +10,8 @@ spec:
           - app: cert-manager
           - app: immich
           - app: chatbot-ui
+          - app: skull-cicd
+          - app: examples-openshift-pub-cicd
   template:
     metadata:
       name: 'app-{{ app }}'
