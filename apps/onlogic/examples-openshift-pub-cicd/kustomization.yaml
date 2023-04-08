@@ -6,3 +6,4 @@ resources:
 - Repository/
 - Namespace/
 - ArgoCD/
+- ApplicationSet/
