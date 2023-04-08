@@ -33,3 +33,7 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         namespace: examples-openshift-pub
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
