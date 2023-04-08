@@ -21,20 +21,21 @@ spec:
             - name: ndots
               value: "1"
 
-        ingress:
-          main:
-            enabled: true
-            annotations:
-              # proxy-body-size is set to 0 to remove the body limit on file uploads
-              # nginx.ingress.kubernetes.io/proxy-body-size: "0"
-            hosts:
-              - host: photos.bohne.io
-                paths:
-                  - path: "/"
-            tls:
-              - hosts:
-                  - photos.bohne.io
-                secretName: cert-photos-bohne-io
+        proxy:
+          ingress:
+            main:
+              enabled: true
+              annotations:
+                # proxy-body-size is set to 0 to remove the body limit on file uploads
+                # nginx.ingress.kubernetes.io/proxy-body-size: "0"
+              hosts:
+                - host: photos.bohne.io
+                  paths:
+                    - path: "/"
+              tls:
+                - hosts:
+                    - photos.bohne.io
+                  secretName: cert-photos-bohne-io
 
         immich:
           persistence:
