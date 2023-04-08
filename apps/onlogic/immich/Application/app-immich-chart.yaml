@@ -21,6 +21,21 @@ spec:
             - name: ndots
               value: "1"
 
+        ingress:
+          main:
+            enabled: true
+            annotations:
+              # proxy-body-size is set to 0 to remove the body limit on file uploads
+              # nginx.ingress.kubernetes.io/proxy-body-size: "0"
+            hosts:
+              - host: photos.bohne.io
+                paths:
+                  - path: "/"
+            tls:
+              - hosts:
+                  - photos.bohne.io
+                secretName: cert-photos-bohne-io
+
         immich:
           persistence:
             # Main data store for all photos shared between different components.
@@ -57,28 +72,7 @@ spec:
                 name: immich-jwt
                 key: password
 
-        # server:
-        #   image:
-        #     repository: docker.io/altran1502/immich-server
-        #     # renovate: datasource=docker depName=docker.io/altran1502/immich-server
-        #     tag: v1.52.1
-
-        # microservice:
-        #   image:
-        #     repository: docker.io/altran1502/immich-server
-        #     # renovate: datasource=docker depName=docker.io/altran1502/immich-server
-        #     tag: v1.52.1
-
         machine_learning:
-        #   image:
-        #     repository: docker.io/altran1502/immich-machine-learning
-        #     # renovate: datasource=docker depName=docker.io/altran1502/immich-machine-learning
-        #     tag: v1.52.1
-        #   command: null
-        #   args: []
-        #   env:
-        #     NODE_ENV: "production"
-        #     TRANSFORMERS_CACHE: /usr/src/app/.transformers_cache
           persistence:
             cache:
               enabled: true
@@ -86,18 +80,6 @@ spec:
               type: pvc
               accessMode: ReadWriteOnce
               storageClass: lvms-vg1
-
-        # web:
-        #   image:
-        #     repository: docker.io/altran1502/immich-web
-        #     # renovate: datasource=docker depName=docker.io/altran1502/immich-web
-        #     tag: v1.52.1
-
-        # proxy:
-        #   image:
-        #     repository: docker.io/altran1502/immich-proxy
-        #     # renovate: datasource=docker depName=docker.io/altran1502/immich-proxy
-        #     tag: v1.52.1
 
   project: default
   syncPolicy:
