@@ -7,3 +7,4 @@ resources:
 - Namespace/
 - ArgoCD/
 - ApplicationSet/
+- ExternalSecret/
