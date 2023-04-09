@@ -25,10 +25,10 @@ spec:
         repoURL: 'https://github.com/openshift-examples/web.git'
         targetRevision: '{{head_sha}}'
         path: deploy/openshift-examples-simple/
-        # helm:
-        #   parameters:
-        #   - name: "image.tag"
-        #     value: "pull-{{head_sha}}"
+        helm:
+          parameters:
+          - name: "imageStream.create"
+            value: "true"
       project: default
       destination:
         server: https://kubernetes.default.svc
