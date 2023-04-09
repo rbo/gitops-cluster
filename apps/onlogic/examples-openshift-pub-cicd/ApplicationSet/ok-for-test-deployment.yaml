@@ -29,6 +29,8 @@ spec:
           parameters:
           - name: "imageStream.create"
             value: "true"
+          - name: "nameOverride"
+            value: "pr-{{number}}"
       project: default
       destination:
         server: https://kubernetes.default.svc
