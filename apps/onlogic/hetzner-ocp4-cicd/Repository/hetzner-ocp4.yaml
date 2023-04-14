@@ -1,0 +1,7 @@
+apiVersion: "pipelinesascode.tekton.dev/v1alpha1"
+kind: Repository
+metadata:
+  name: hetzner-ocp4
+  namespace: hetzner-ocp4-cicd
+spec:
+  url: "https://github.com/RedHat-EMEA-SSA-Team/hetzner-ocp4"

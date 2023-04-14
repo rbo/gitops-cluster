@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: RedHat-EMEA-SSA-Team / hetzner-ocp4  cicd
+    openshift.io/display-name: RedHat-EMEA-SSA-Team / hetzner-ocp4  cicd
+    openshift.io/requester: robert@bohne.io
+  labels:
+  name: hetzner-ocp4-cicd
+spec: {}

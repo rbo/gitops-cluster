@@ -12,6 +12,7 @@ spec:
           - app: chatbot-ui
           - app: skull-cicd
           - app: examples-openshift-pub-cicd
+          - app: hetzner-ocp4-cicd
   template:
     metadata:
       name: 'app-{{ app }}'
