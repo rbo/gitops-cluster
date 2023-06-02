@@ -15,7 +15,7 @@ spec:
         .dockerconfigjson: |
           {
             "auths": {
-              "quay.io/openshift-examples/": {
+              "quay.io/openshift-examples": {
                 "auth": "{{ ( printf "%s:%s" .username .password ) | b64enc }}"
               }
             }
