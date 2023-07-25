@@ -35,6 +35,11 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         namespace: examples-openshift-pub
+      ignoreDifferences:
+      - group: "apps"
+        kind: "Deployment"
+        jqPathExpressions:
+          - .spec.template.spec.containers[].image
       syncPolicy:
         automated:
           prune: true
