@@ -93,7 +93,7 @@ spec:
       clusters:
       - 'https://api.rh-us-east-1.openshift.com'
       kinds:
-      - podtemplates
+      - PodTemplate
     - apiGroups:
       - tekton.dev
       clusters:
