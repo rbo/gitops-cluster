@@ -82,6 +82,12 @@ spec:
         memory: 256Mi
   resourceExclusions: |
     - apiGroups:
+      - monitoring.coreos.com/v1
+      clusters:
+      - 'https://api.rh-us-east-1.openshift.com'
+      kinds:
+      - alertmanagers
+    - apiGroups:
       - tekton.dev
       clusters:
       - '*'
