@@ -88,6 +88,12 @@ spec:
       kinds:
       - alertmanagers
     - apiGroups:
+      - '*'
+      clusters:
+      - 'https://api.rh-us-east-1.openshift.com'
+      kinds:
+      - podtemplates
+    - apiGroups:
       - tekton.dev
       clusters:
       - '*'
