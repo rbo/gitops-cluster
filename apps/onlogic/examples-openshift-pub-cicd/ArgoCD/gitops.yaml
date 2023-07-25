@@ -83,6 +83,7 @@ spec:
   resourceExclusions: |
     - apiGroups:
       - monitoring.coreos.com/v1
+      - network.openshift.io/v1
       clusters:
       - 'https://api.rh-us-east-1.openshift.com'
       kinds:
