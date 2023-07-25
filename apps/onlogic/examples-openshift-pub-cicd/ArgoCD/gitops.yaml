@@ -95,6 +95,13 @@ spec:
       kinds:
       - PodTemplate
     - apiGroups:
+      - 'apps'
+      clusters:
+      - 'https://api.rh-us-east-1.openshift.com'
+      kinds:
+      - ControllerRevision
+
+    - apiGroups:
       - tekton.dev
       clusters:
       - '*'
