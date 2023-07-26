@@ -1,17 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: appset-of-apps
+  name: app-in-dotargocd
   namespace: openshift-gitops
 spec:
   generators:
     - list:
         elements:
-          - app: cert-manager
-          - app: immich
-          - app: chatbot-ui
-          - app: skull-cicd
-          - app: hetzner-ocp4-cicd
+          - app: examples-openshift-pub-cicd
+            repoURL: https://github.com/rbo/openshift-examples-web.git
+            targetRevision: refactor-development
   template:
     metadata:
       name: 'app-{{ app }}'
@@ -21,6 +19,6 @@ spec:
         server: https://kubernetes.default.svc
       project: default
       source:
-        path: 'apps/onlogic/{{ app }}/'
-        repoURL: https://github.com/rbo/gitops-cluster.git
-        targetRevision: main
+        path: '.argocd/'
+        repoURL: '{{ repoURL }}'
+        targetRevision: '{{ targetRevision }}'
