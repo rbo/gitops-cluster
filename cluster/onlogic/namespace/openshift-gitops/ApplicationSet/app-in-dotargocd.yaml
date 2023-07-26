@@ -14,10 +14,10 @@ spec:
   template:
     metadata:
       name: 'app-{{ app }}'
-      namespace: '{{ namespace }}'
     spec:
       destination:
         server: https://kubernetes.default.svc
+        namespace: '{{ namespace }}'
       project: default
       source:
         path: '.argocd/'
