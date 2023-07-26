@@ -10,10 +10,11 @@ spec:
           - app: examples-openshift-pub-cicd
             repoURL: https://github.com/rbo/openshift-examples-web.git
             targetRevision: refactor-development
+            namespace: examples-openshift-pub
   template:
     metadata:
       name: 'app-{{ app }}'
-      namespace: openshift-gitops
+      namespace: '{{ namespace }}'
     spec:
       destination:
         server: https://kubernetes.default.svc
