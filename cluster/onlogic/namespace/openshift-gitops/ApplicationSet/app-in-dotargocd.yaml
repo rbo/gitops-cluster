@@ -23,3 +23,6 @@ spec:
         path: '.argocd/'
         repoURL: '{{ repoURL }}'
         targetRevision: '{{ targetRevision }}'
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
