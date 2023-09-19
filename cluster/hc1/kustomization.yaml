@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - disable-self-provisioners.yaml
   - cluster-scope
+  - namespace
