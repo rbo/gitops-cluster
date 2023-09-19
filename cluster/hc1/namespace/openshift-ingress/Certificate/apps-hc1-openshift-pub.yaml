@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: apps-hc1-openshift-pub
+spec:
+  commonName: "*.apps.hc1.openshift.pub"
+  dnsNames:
+  - "*.apps.hc1.openshift.pub"
+  issuerRef:
+    group: cert-manager.io
+    kind: ClusterIssuer
+    name: cloudflare-openshift-pub
+  privateKey:
+    algorithm: ECDSA
+    size: 256
+  secretName: cert-apps-hc1-openshift-pub
