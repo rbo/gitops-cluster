@@ -5,3 +5,4 @@ resources:
 - openshift-gitops/
 - openshift-ingress/
 - cert-manager-operator/
+- cert-manager/
