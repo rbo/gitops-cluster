@@ -3,4 +3,3 @@ kind: Kustomization
 namespace: openshift-ingress
 resources:
  - Certificate/
- - ExternalSecret/
