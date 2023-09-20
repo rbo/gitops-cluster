@@ -1,0 +1,6 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: hetzner-csi-driver
+resources:
+ - hcloud-csi-v2.4.0.yaml
+ - ExternalSecret/

@@ -7,3 +7,4 @@ resources:
 - cert-manager-operator/
 - cert-manager/
 - openshift-ingress-operator/
+- hetzner-csi-driver/
