@@ -7,3 +7,5 @@ resources:
   - namespace
   # Install operators:
   - ../../operators/openshift-pipelines/
+  # Apps
+  - ../../apps/benito-greybeard-cicd/
