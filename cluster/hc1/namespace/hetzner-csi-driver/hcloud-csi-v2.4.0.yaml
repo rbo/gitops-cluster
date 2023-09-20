@@ -235,7 +235,7 @@ spec:
         - name: CSI_ENDPOINT
           value: unix:///run/csi/socket
         - name: METRICS_ENDPOINT
-          value: 0.0.0.0:9189
+          value: 0.0.0.0:19189
         - name: ENABLE_METRICS
           value: "true"
         - name: KUBE_NODE_NAME
@@ -278,6 +278,7 @@ spec:
       volumes:
       - emptyDir: {}
         name: socket-dir
+      hostNetwork: true
 ---
 apiVersion: apps/v1
 kind: DaemonSet
@@ -320,7 +321,7 @@ spec:
         - name: CSI_ENDPOINT
           value: unix:///run/csi/socket
         - name: METRICS_ENDPOINT
-          value: 0.0.0.0:9189
+          value: 0.0.0.0:19189
         - name: ENABLE_METRICS
           value: "true"
         image: hetznercloud/hcloud-csi-driver:v2.4.0 # x-release-please-version
@@ -335,9 +336,9 @@ spec:
           timeoutSeconds: 3
         name: hcloud-csi-driver
         ports:
-        - containerPort: 9189
+        - containerPort: 19189
           name: metrics
-        - containerPort: 9808
+        - containerPort: 19808
           name: healthz
           protocol: TCP
         securityContext:
@@ -380,6 +381,7 @@ spec:
           path: /dev
           type: Directory
         name: device-dir
+      hostNetwork: true
 ---
 apiVersion: storage.k8s.io/v1
 kind: CSIDriver
