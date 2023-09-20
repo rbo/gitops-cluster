@@ -8,3 +8,4 @@ resources:
 - cert-manager/
 - openshift-ingress-operator/
 - hetzner-csi-driver/
+- openshift-image-registry/

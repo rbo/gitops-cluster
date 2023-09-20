@@ -1,0 +1,13 @@
+apiVersion: imageregistry.operator.openshift.io/v1
+kind: Config
+metadata:
+  name: cluster
+  annotations:
+    argocd.argoproj.io/sync-options: ServerSideApply=true
+spec:
+  managementState: Managed
+  replicas: 1
+  rolloutStrategy: Recreate
+  storage: 
+    pvc:
+      claim: image-registry-pvc
