@@ -4,3 +4,5 @@ namespace: multi-arch-pipeline
 resources:
 - namespace.yaml
 - Repository/
+- ResourceQuota/
+- LimitRange/
