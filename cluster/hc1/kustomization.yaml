@@ -5,3 +5,5 @@ resources:
   - disable-self-provisioners.yaml
   - cluster-scope
   - namespace
+  # Install operators:
+  - ../../operators/openshift-pipelines/
