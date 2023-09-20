@@ -327,7 +327,7 @@ spec:
         - name: CSI_ENDPOINT
           value: unix:///run/csi/socket
         - name: METRICS_ENDPOINT
-          value: 0.0.0.0:19189
+          value: 0.0.0.0:29189
         - name: ENABLE_METRICS
           value: "true"
         image: hetznercloud/hcloud-csi-driver:v2.4.0 # x-release-please-version
