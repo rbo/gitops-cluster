@@ -7,7 +7,7 @@ spec:
   generators:
     - list:
         elements:
-          - app: cert-manager
+          #- app: cert-manager
           #- app: immich
           #- app: chatbot-ui
           #- app: skull-cicd
