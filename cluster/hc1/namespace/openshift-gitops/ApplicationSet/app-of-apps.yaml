@@ -7,6 +7,7 @@ spec:
   generators:
     - list:
         elements:
+          - app: multi-arch-pipeline
           #- app: cert-manager
           #- app: immich
           #- app: chatbot-ui
