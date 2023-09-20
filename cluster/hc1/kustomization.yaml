@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   - disable-self-provisioners.yaml
+  - enable-routingViaHost.yaml
   - cluster-scope
   - namespace
   # Install operators:
