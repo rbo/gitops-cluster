@@ -14,6 +14,12 @@ metadata:
   name: hcloud-csi-controller
   namespace: kube-system
 ---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: hcloud-csi-node
+  namespace: kube-system
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -364,7 +370,7 @@ spec:
         operator: Exists
       - key: CriticalAddonsOnly
         operator: Exists
-      serviceAccountName: hcloud-csi-controller
+      serviceAccountName: hcloud-csi-node
       volumes:
       - hostPath:
           path: /var/lib/kubelet
