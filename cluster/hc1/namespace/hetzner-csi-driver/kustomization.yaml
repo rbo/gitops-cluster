@@ -4,3 +4,4 @@ namespace: hetzner-csi-driver
 resources:
  - hcloud-csi-v2.4.0.yaml
  - ExternalSecret/
+ - namespace.yaml
