@@ -1,0 +1,6 @@
+apiVersion: "pipelinesascode.tekton.dev/v1alpha1"
+kind: Repository
+metadata:
+  name:  starter-app-python
+spec:
+  url: "https://github.com/cloud-native-robotz-hackathon/starter-app-python"

@@ -8,6 +8,7 @@ spec:
     - list:
         elements:
           - app: multi-arch-pipeline
+          - app: cloud-native-robotz-hackathon
           #- app: cert-manager
           #- app: immich
           #- app: chatbot-ui

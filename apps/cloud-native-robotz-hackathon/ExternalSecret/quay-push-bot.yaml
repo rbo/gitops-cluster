@@ -1,0 +1,32 @@
+---
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: quay-push-bot
+spec:
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: onepassword-container
+  target:
+    creationPolicy: Owner
+    template:
+      type: kubernetes.io/dockerconfigjson
+      data:
+        .dockerconfigjson: |
+          {
+            "auths": {
+              "quay.io/cloud-native-robotz-hackathon": {
+                "auth": "{{ ( printf "%s:%s" .username .password ) | b64enc }}"
+              }
+            }
+          }
+    name: quay-push-bot
+  data:
+    - secretKey: username
+      remoteRef:
+        key: "cloud-native-robotz-hackathon+benito_greybeard_cicd"
+        property: username
+    - secretKey: password
+      remoteRef:
+        key: "cloud-native-robotz-hackathon+benito_greybeard_cicd"
+        property: password

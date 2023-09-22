@@ -1,0 +1,22 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: cloud-native-robotz-hackathon-admins
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: rbohne@redhat.com
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: dbrintzi@redhat.com
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: grieger@redhat.com
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: aluberda@redhat.com
+
