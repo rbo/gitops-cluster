@@ -10,8 +10,7 @@ spec:
     name: cert-apps-hc1-openshift-pub
   nodePlacement:
     nodeSelector:
-      matchExpressions:
-        - key: "node-role.kubernetes.io/ingress"
-          operator: Exists
+      matchLabels:
+        node-role.kubernetes.io/ingress: ""
     tolerations:
       - operator: Exists
