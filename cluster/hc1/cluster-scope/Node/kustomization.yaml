@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - worker-0-arm.yaml
 - worker-0-x86.yaml
+- control-plane-0.yaml
