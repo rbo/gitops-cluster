@@ -5,9 +5,13 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: ServerSideApply=true
 spec:
+  replicas: 3
   defaultCertificate:
     name: cert-apps-hc1-openshift-pub
   nodePlacement:
+    nodeSelector:
+      matchExpressions:
+        - key: "node-role.kubernetes.io/ingress"
+          operator: Exists
     tolerations:
-       - effect: NoSchedule
-         key: node-role.kubernetes.io/master
+      - operator: Exists
