@@ -1,7 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- Group/
-- ClusterRoleBinding/
-- Config.imageregistry/
-- Node/
+- worker-0-arm.yaml
+- worker-0-x86.yaml
