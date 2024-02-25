@@ -6,9 +6,9 @@ metadata:
     argocd.argoproj.io/sync-options: ServerSideApply=true
     argocd.argoproj.io/sync-wave: -100
 spec:
-  route:
-    hostname: registry.apps.hc1.openshift.pub
-    name: registry
+  routes:
+    - hostname: registry.apps.hc1.openshift.pub
+      name: registry
   managementState: Managed
   replicas: 1
   rolloutStrategy: Recreate
