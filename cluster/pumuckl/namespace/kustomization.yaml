@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
 #- openshift-gitops/
-#- openshift-ingress/
+- openshift-ingress/
 - cert-manager-operator/
 - cert-manager/
 #- openshift-ingress-operator/
