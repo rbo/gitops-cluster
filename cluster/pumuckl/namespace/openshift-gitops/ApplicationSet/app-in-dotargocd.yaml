@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: app-in-dotargocd
+  namespace: openshift-gitops
+spec:
+  generators:
+    - list:
+        elements:
+          - app: examples-openshift-pub-cicd
+            repoURL: https://github.com/openshift-examples/web.git
+            targetRevision: main
+            namespace: examples-openshift-pub
+  template:
+    metadata:
+      name: 'app-{{ app }}'
+    spec:
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{ namespace }}'
+      project: default
+      source:
+        path: '.argocd/'
+        repoURL: '{{ repoURL }}'
+        targetRevision: '{{ targetRevision }}'
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
