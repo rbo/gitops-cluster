@@ -5,7 +5,7 @@ resources:
   - disable-self-provisioners.yaml
   - cluster-scope/
 #  - enable-routingViaHost.yaml
-#  - namespace
+  - namespace/
   # Install operators:
 #  - ../../operators/openshift-pipelines/
   # Apps
