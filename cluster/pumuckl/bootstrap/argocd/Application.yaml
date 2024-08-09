@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cluster-configuration
+  namespace: openshift-gitops
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: cluster/pumuckl
+    repoURL: https://github.com/rbo/gitops-cluster
+    targetRevision: HEAD
