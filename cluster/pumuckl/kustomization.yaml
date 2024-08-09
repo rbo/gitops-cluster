@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - disable-self-provisioners.yaml
 #  - enable-routingViaHost.yaml
-#  - cluster-scope
+  - cluster-scope
 #  - namespace
   # Install operators:
 #  - ../../operators/openshift-pipelines/
