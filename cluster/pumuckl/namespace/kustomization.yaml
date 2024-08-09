@@ -6,5 +6,5 @@ resources:
 - openshift-ingress/
 - cert-manager-operator/
 - cert-manager/
-#- openshift-ingress-operator/
+- openshift-ingress-operator/
 #- openshift-image-registry/
