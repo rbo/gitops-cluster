@@ -7,7 +7,7 @@ metadata:
     argocd.argoproj.io/sync-wave: -100
 spec:
   routes:
-    - hostname: registry.apps.pumuckl.openshift.pub
+    - hostname: registry.apps.hc1.openshift.pub
       name: registry
   managementState: Managed
   replicas: 1
