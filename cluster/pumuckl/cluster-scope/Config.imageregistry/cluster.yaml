@@ -1,0 +1,17 @@
+apiVersion: imageregistry.operator.openshift.io/v1
+kind: Config
+metadata:
+  name: cluster
+  annotations:
+    argocd.argoproj.io/sync-options: ServerSideApply=true
+    argocd.argoproj.io/sync-wave: -100
+spec:
+  routes:
+    - hostname: registry.apps.pumuckl.openshift.pub
+      name: registry
+  managementState: Managed
+  replicas: 1
+  rolloutStrategy: Recreate
+  storage: 
+    pvc:
+      claim: image-registry-pvc

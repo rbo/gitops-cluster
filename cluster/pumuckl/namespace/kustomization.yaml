@@ -8,4 +8,4 @@ resources:
 - cert-manager/
 - openshift-ingress-operator/
 - openshift-storage/
-#- openshift-image-registry/
+- openshift-image-registry/
