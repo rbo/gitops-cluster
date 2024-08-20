@@ -5,3 +5,4 @@ resources:
 - ClusterRoleBinding/
 - Config.imageregistry/
 #- Node/
+- MachineConfig/
