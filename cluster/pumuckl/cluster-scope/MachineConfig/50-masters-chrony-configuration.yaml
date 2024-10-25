@@ -4,7 +4,6 @@ metadata:
   labels:
     machineconfiguration.openshift.io/role: master
   name: 50-masters-chrony-configuration
-  resourceVersion: "1839"
 spec:
   config:
     ignition:
